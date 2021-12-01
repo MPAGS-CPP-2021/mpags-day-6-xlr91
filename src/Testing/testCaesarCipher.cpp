@@ -15,3 +15,5 @@ TEST_CASE("Caesar Cipher decryption", "[caesar]")
     CaesarCipher cc{10};
     REQUIRE(cc.applyCipher("ROVVYGYBVN", CipherMode::Decrypt) == "HELLOWORLD");
 }
+
+//Insert test case for those catches, Dont know how to tell Catch to test these
