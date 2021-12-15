@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+
+
 bool processCommandLine(const std::vector<std::string>& cmdLineArgs,
                         ProgramSettings& settings)
 {
@@ -26,10 +28,14 @@ bool processCommandLine(const std::vector<std::string>& cmdLineArgs,
             // Handle input file option
             // Next element is filename unless "-i" is the last argument
             if (i == nCmdLineArgs - 1) {
+                
+                throw MissingArgument("[throw] -i requires a filename argument");
+                
                 std::cerr << "[error] -i requires a filename argument"
                           << std::endl;
                 // Set the flag to indicate the error and terminate the loop
-                processStatus = false;
+                processStatus = false; //keep the flag in here juustt in case
+                
                 break;
             } else {
                 // Got filename, so assign value and advance past it

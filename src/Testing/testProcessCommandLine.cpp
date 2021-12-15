@@ -74,9 +74,8 @@ TEST_CASE("Input file declared without using input file")
     ProgramSettings settings{
         false, false, "", "", "", CipherMode::Encrypt, CipherType::Caesar};
     const std::vector<std::string> cmdLine{"mpags-cipher", "-i"};
-    const bool res{processCommandLine(cmdLine, settings)};
-
-    REQUIRE(!res);
+    REQUIRE_THROWS_AS(processCommandLine(cmdLine, settings), std::invalid_argument); 
+    
 }
 
 TEST_CASE("Input file declared")

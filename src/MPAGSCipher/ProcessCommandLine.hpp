@@ -6,6 +6,16 @@
 
 #include <string>
 #include <vector>
+#include <stdexcept>
+
+class MissingArgument : public std::invalid_argument { 
+    public:
+        MissingArgument( const std::string & msg):
+            std::invalid_argument(msg){
+            }
+
+};
+
 
 /**
  * \file ProcessCommandLine.hpp
