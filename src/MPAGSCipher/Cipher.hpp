@@ -4,6 +4,17 @@
 #include "CipherMode.hpp"
 
 #include <string>
+#include <stdexcept>
+
+
+class InvalidKey : public std::invalid_argument { 
+    public:
+        InvalidKey( const std::string & msg):
+            std::invalid_argument(msg){
+            }
+
+};
+
 
 /**
  * \file Cipher.hpp

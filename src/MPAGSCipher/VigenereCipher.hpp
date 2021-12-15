@@ -8,6 +8,7 @@
 #include <map>
 #include <string>
 
+
 /**
  * \file VigenereCipher.hpp
  * \brief Contains the declaration of the VigenereCipher class

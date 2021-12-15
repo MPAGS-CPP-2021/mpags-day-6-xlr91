@@ -30,7 +30,7 @@ bool processCommandLine(const std::vector<std::string>& cmdLineArgs,
             if (i == nCmdLineArgs - 1) {
                 
                 throw MissingArgument("[throw] -i requires a filename argument");
-                
+                //keep this
                 std::cerr << "[error] -i requires a filename argument"
                           << std::endl;
                 // Set the flag to indicate the error and terminate the loop

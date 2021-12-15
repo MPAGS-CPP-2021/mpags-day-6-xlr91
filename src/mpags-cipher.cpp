@@ -108,7 +108,18 @@ int main(int argc, char* argv[])
     }
 
     // Run the cipher on the input text, specifying whether to encrypt/decrypt
-    const std::string outputText{cipher->applyCipher(inputText, settings.cipherMode)};
+
+    std::string tempout{""};
+
+
+    try{
+       tempout = cipher->applyCipher(inputText, settings.cipherMode);
+    } catch (const InvalidKey& e){
+        std::cerr << "[Error] Bad key: " << e.what() << std::endl;
+        return 1;
+    }
+    
+    const std::string outputText = tempout; 
 
     // Output the encrypted/decrypted text to stdout/file
     if (!settings.outputFile.empty()) {
